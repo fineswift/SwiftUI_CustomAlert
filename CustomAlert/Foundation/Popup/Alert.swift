@@ -35,9 +35,9 @@ enum AlertButtonType: Equatable {
     var type: ButtonType {
         switch self {
         case .confirm:
-            return .secondary
-        case .cancel:
             return .primary
+        case .cancel:
+            return .secondary
         default:
             return .primary
         }

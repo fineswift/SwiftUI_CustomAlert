@@ -31,7 +31,7 @@ struct AlertView: View {
                 alert.content
                 
                 // Bottom Buttons
-                HStack(spacing: 0) {
+                HStack(spacing: 20) {
                     ForEach(alert.buttons.indices, id: \.self) { index in
                         let button = alert.buttons[index]
                         
@@ -39,6 +39,7 @@ struct AlertView: View {
                             alert.completion?(button)
                             dismiss()
                         }
+                        .buttonStyle(AlertButtonStyle(type: button))
                     }
                 }
                 .padding([.leading, .trailing, .bottom], 20)
